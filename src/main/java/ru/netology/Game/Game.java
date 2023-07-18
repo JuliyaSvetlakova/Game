@@ -2,25 +2,26 @@ package ru.netology.Game;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class Game {
-    ArrayList<Player> playersList = new ArrayList<>();
+    HashMap<String, Player> playersMap = new HashMap<>();
 
 
-    public ArrayList<Player> getPlayersList() {
-        return playersList;
-    }
+    /*public HashMap<String, Player> getPlayersMap() {
+        return playersMap;
+    }*/
 
-    public ArrayList<Player> register(Player player) {
-        this.playersList.add(player);
-        return playersList;
+    public HashMap<String, Player> register(Player player) {
+        this.playersMap.put(player.getName(), player);
+        return playersMap;
     }
 
 
     public Player findByName(String name) {
-        for (Player player : playersList) {
-            if (player.getName().equals(name)) {
-                return player;
+        for (String names : playersMap.keySet()) {
+            if (names.equals(name)) {
+                return playersMap.get(names);
             }
         }
         return null;
