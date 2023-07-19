@@ -15,22 +15,6 @@ public class GameTest {
     Player player5 = new Player(10, "Коля", 9);
 
 
-  /* @Test
-    public void playerRegistration() {
-
-        Game games = new Game();
-
-        games.register(player1);
-        games.register(player2);
-        games.register(player3);
-        games.register(player4);
-        games.register(player5);
-
-       ArrayList<Player> expected = new ArrayMap<Player>(Arrays.asList(player1,player2, player3, player4, player5));
-        ArrayList<Player> actual = games.getPlayersMap();
-        Assertions.assertEquals(expected, actual);
-    }*/
-
     @Test
     public void searchByName() {
 
@@ -46,6 +30,7 @@ public class GameTest {
         Player actual = games.findByName("Оля");
         Assertions.assertEquals(expected, actual);
     }
+
     @Test
     public void searchByUnregisteredName() {
 
@@ -74,6 +59,7 @@ public class GameTest {
         int actual = games.round("Дима", "Рита");
         Assertions.assertEquals(expected, actual);
     }
+
     @Test
     public void competitionsBetweenTwoRegisteredPlayersSecond() {
 
@@ -86,6 +72,7 @@ public class GameTest {
         int actual = games.round("Ира", "Дима");
         Assertions.assertEquals(expected, actual);
     }
+
     @Test
     public void competitionsBetweenTwoRegisteredPlayersDraw() {
 
@@ -114,6 +101,7 @@ public class GameTest {
             games.round("Катя", "Олег");
         });
     }
+
     @Test
     public void competitionsWithTheFirstUnregisteredPlayer() {
 
@@ -129,6 +117,7 @@ public class GameTest {
             games.round("Катя", "Коля");
         });
     }
+
     @Test
     public void competitionsWithTheSecondUnregisteredPlayer() {
 

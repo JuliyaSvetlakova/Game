@@ -8,10 +8,6 @@ public class Game {
     HashMap<String, Player> playersMap = new HashMap<>();
 
 
-    /*public HashMap<String, Player> getPlayersMap() {
-        return playersMap;
-    }*/
-
     public HashMap<String, Player> register(Player player) {
         this.playersMap.put(player.getName(), player);
         return playersMap;
@@ -27,12 +23,12 @@ public class Game {
         return null;
     }
 
-    public int round (String playerName1, String playerName2) {
+    public int round(String playerName1, String playerName2) {
         if (findByName(playerName1) == null) {
-            throw new NotRegisteredException( " The player with the name " + playerName1 + " is not registered" );
+            throw new NotRegisteredException(" The player with the name " + playerName1 + " is not registered");
         }
         if (findByName(playerName2) == null) {
-            throw new NotRegisteredException( " The player with the name" + playerName2 + " is not registered");
+            throw new NotRegisteredException(" The player with the name" + playerName2 + " is not registered");
         }
         if (findByName(playerName1).getStrength() < findByName(playerName2).getStrength()) {
             return 2;
